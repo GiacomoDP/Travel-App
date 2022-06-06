@@ -1,7 +1,7 @@
 document.addEventListener(
-  "DOMContentLoaded",
-  () => {
-    console.log("travelApp JS imported successfully!");
-  },
-  false
+    "DOMContentLoaded",
+    () => {
+        console.log("Travel-App JS imported successfully!");
+    },
+    false
 );

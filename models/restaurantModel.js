@@ -2,11 +2,13 @@ const { model, Schema } = require('mongoose')
 
 const restaurantsSchema = new Schema({
 
-    restaurantName: String,
-    restaurantAdress: String,
-    restaurantPicture: String,
-    restaurantDescription: String,
-    restaurantPrice: String,
+    city: { type: String, required: true },
+    country: String,
+    name: String,
+    address: String,
+    picture: String,
+    description: String,
+    price: String,
 
 }, {
     timestamps: true

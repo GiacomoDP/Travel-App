@@ -16,13 +16,16 @@ require('./config')(app)
 
 // default value for title local
 const capitalized = require('./utils/capitalized')
-const projectName = 'travelApp'
+const projectName = 'Travel-App'
 
 app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`
 
 // 👇 Start handling routes here
 const index = require('./routes/index.routes')
 app.use('/', index)
+
+const citiesRouter = require('./routes/cities.routes')
+app.use('/', citiesRouter)
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app)
