@@ -4,5 +4,6 @@ node_modules
 # Debug log from npm
 npm-debug.log
 
+.vscode/
 # Environment Variables should NEVER be published
 .env
