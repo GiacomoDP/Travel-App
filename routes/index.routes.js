@@ -19,7 +19,7 @@ router.get("/login", (req, res, next) => {
 router.post("/authenticate", (req, res, next) => {
     console.log('SESSION =====> ', req.session);
 
-    console.log("REQUEST OBJECt", req.body);
+    console.log("REQUEST OBJECT", req.body);
     const u_name = req.body.username;
     const pwd = req.body.password;
     User.find({ username: u_name }).then(function(data) {
@@ -54,15 +54,18 @@ router.post("/signup", async(req, res, next) => {
     const salt = await bcrypt.genSalt(10)
     const passwordHash = await bcrypt.hash(password, salt)
 
-    router.post("/signup", async(req, res) => {
-        const { username, password } = req.body;
+    // router.post("/signup", async(req, res) => {
+    //     const { username, password } = req.body;
 
-        const salt = await bcrypt.genSalt(10);
-        const passwordHash = await bcrypt.hash(password, salt);
+    //     const salt = await bcrypt.genSalt(10);
+    //     const passwordHash = await bcrypt.hash(password, salt);
 
-        await User.create({ username: username, password: passwordHash });
-        // res.send(`Post with ${username} and ${password}`)
-        res.redirect("/profile");
-    });
+    await User.create({ username: username, password: passwordHash });
+    // res.send(`Post with ${username} and ${password}`)
+    res.redirect("/login");
 })
+
+
+
+// })
 module.exports = router;
