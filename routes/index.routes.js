@@ -56,7 +56,7 @@ router.post("/signup", async (req, res) => {
 
   await User.create({ username: username, password: passwordHash });
   // res.send(`Post with ${username} and ${password}`)
-  res.redirect("/profile");
+  res.redirect("/login");
 });
 
 module.exports = router;
