@@ -20,7 +20,7 @@ router.get("/signup", (req, res, next) => {
     res.render("auth/signup")
 })
 
-router.post("/signup", async(req, res) => {
+router.post("/signup", async(req, res, next) => {
     const { username, password } = req.body
 
     const salt = await bcrypt.genSalt(10)
