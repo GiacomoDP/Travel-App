@@ -14,6 +14,33 @@ router.get('/', async(req, res, next) => {
     }
 })
 
+
+//getting italian cities
+router.get("/italian", (req, res, next) => {
+    res.render("italianCities.ejs")
+})
+
+router.get('/german/hambourg', async(req, res, next) => {
+    try {
+        const hambourgRestaurants = await restaurantModel.find({ city: 'Hamburg' })
+        console.log('this is HH_Restaurant', hambourgRestaurants)
+        res.render("/restaurantsByCity/hambourgRestaurants")
+    } catch (error) {
+        console.log('This is an error in the Hambourg Restaurants', error)
+    }
+
+})
+
+
+
+
+
+//getting german cities
+router.get("/german", (req, res, next) => {
+    res.render("germanCities.ejs")
+})
+
+
 // Add a new city
 router.get('/create', async(req, res, next) => {
     res.render('/create-form')
