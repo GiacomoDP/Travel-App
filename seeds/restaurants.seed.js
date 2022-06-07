@@ -10,6 +10,16 @@ const restaurants = [{
 
     },
     {
+        city: 'Hambourg',
+        country: 'Germany',
+        name: 'Second favorite',
+        address: 'knowing boh',
+        picture: 'really nice',
+        description: 'later',
+        price: 'cheap',
+
+    },
+    {
         city: 'Venice',
         country: 'Italy',
         name: 'ourFavo',
