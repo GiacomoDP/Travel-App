@@ -1,6 +1,6 @@
 //
 const restaurants = [{
-        city: 'Hamburg',
+        city: 'Hambourg',
         country: 'Germany',
         name: 'ourFavo',
         address: 'knowing',

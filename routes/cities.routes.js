@@ -22,9 +22,9 @@ router.get("/italian", (req, res, next) => {
 
 router.get('/german/hambourg', async(req, res, next) => {
     try {
-        const hambourgRestaurants = await restaurantModel.find({ city: 'Hamburg' })
-        console.log('this is HH_Restaurant', hambourgRestaurants)
-        res.render("/restaurantsByCity/hambourgRestaurants")
+        const hambourgRestaurants = await restaurantModel.find({ city: 'Hambourg' })
+        //console.log('this is HH_Restaurant', hambourgRestaurants[0])
+        res.render("restaurantsByCity/hambourgRestaurants", {hambourgRestaurants} )
     } catch (error) {
         console.log('This is an error in the Hambourg Restaurants', error)
     }
