@@ -1,14 +1,22 @@
 const User = require("../models/User.model");
 var bcrypt = require("bcryptjs");
 const router = require("express").Router();
+const isLogIn = require("../middleware/isLogIn");
+const restaurantModel = require("../models/restaurantModel")
 
 /* GET home page */
 router.get("/", (req, res, next) => {
   res.render("index");
 });
 
-router.get("/profile", (req, res, next) => {
-  res.render("users/profile");
+router.get("/profile", isLogIn, (req, res, next) => {
+const name = req.session.currentUser.username
+restaurantModel.find({autor: req.session.currentUser._id})
+.then((userRestaurants) => {
+  
+  res.render("users/profile", {name, userRestaurants});
+})
+  
 });
 
 router.get("/login", (req, res, next) => {
@@ -16,33 +24,48 @@ router.get("/login", (req, res, next) => {
   res.render("auth/login");
 });
 
-router.post("/authenticate", (req, res, next) => {
-    console.log('SESSION =====> ', req.session);
+router.post("/login",  (req, res, next) => {
+   
+ 
  
   console.log("REQUEST OBJECt", req.body);
-  const u_name = req.body.username;
-  const pwd = req.body.password;
-    User.find({ username: u_name }).then(function (data) {
-      console.log(data);
-
-      if (data.length != 0) {
+  
+  const {username , password} = req.body
+ 
+    User.findOne({ username }).then((data) => {
+      console.log(data,"----------ciaone-----------");
+      console.log(data.password, "---data.password---")
+      
+      if (!data) {
+         res.status(400).render("/auth/login")
+         return 
+      }
         //comparing pwd hash
-        const pwd_hash_from_db = data[0].password;
-        console.log("WAASDADADAd", pwd_hash_from_db);
-        const isPwdMatch = bcrypt.compareSync(pwd, pwd_hash_from_db);
-        console.log("-------isPwdMatch-------", isPwdMatch);
+        const pwd_hash_from_db = data.password;
+        console.log("WAASDADADAd",pwd_hash_from_db );
+        const isPwdMatch = bcrypt.compareSync(password, pwd_hash_from_db)
+          if (!isPwdMatch){
+            res.status(400).render("/auth/login")
+            return
+          }
+          req.session.currentUser = data 
+          res.redirect("/profile")
+        });
+        /*console.log("-------isPwdMatch-------", isPwdMatch);
         if (isPwdMatch) {
-            req.session.currentUser = u_name;
+            req.session.currentUser = data;
           res.render("users/profile",{ userInSession: req.session.currentUser });
         } else {
           res.render("auth/login");
-        }
-      } else {
-        res.render("auth/login");
-      }
+        }*/
+        //.catch((error) => {
+          //console.log(error, "-----error login page-----")
+         //})
+         
+     
     })
- 
-});
+   
+
 
 router.get("/signup", (req, res, next) => {
   res.render("auth/signup");
