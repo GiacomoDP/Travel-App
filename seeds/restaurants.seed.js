@@ -520,7 +520,7 @@ const restaurants = [
     {
         city: 'Freiburg',
         country: 'Germany',
-        name: 'Wolfshohle',
+        name: 'Wolfsöhle',
         address: 'Konviktstraße 8, 79098 Freiburg im Breisgau',
         picture: '../../images/Freiburg/Freiburg3.png',
         description: 'Elegant restaurant offering exclusive 5-course menus with seasonal ingredients.',
@@ -531,7 +531,7 @@ const restaurants = [
     {
         city: 'Freiburg',
         country: 'Germany',
-        name: 'Das Blumchen',
+        name: 'Das Blümchen',
         address: 'Unterdorf 2, 79112 Freiburg im Breisgau',
         picture: '../../images/Freiburg/Freiburg4.jpg',
         description: 'Pleasure can also be different',
