@@ -1,0 +1,49 @@
+<div>
+
+
+  <div>
+      <form action="/profile/<%= updatedRestaurant._id %>/update " method="POST"  enctype="multipart/form-data">
+        <div>
+    
+            <img src="<%= updatedRestaurant.picture %> " alt="Picture updated" width="300px" height="300px">
+            <label for="restaurantsImage">
+                <input type="file" name="restaurantsImage">
+            </label>
+            
+        </div>
+        <div>   
+            
+                <label for="name">Restaurant Name</label>
+                <input type="text " name="name" value="<%= updatedRestaurant.name %>">
+            
+        </div>
+    <label for="city">City</label>
+    <select name="city">
+        <option value="<%= updatedRestaurant.city %> ">Hambourg</option>
+        <option value="<%= updatedRestaurant.city %> ">Freiburg</option>
+        <option value="<%= updatedRestaurant.city %> ">Dresden</option>
+        <option value="<%= updatedRestaurant.city %> ">Munich</option>
+        <option value="<%= updatedRestaurant.city %> ">Luebeck</option>
+        <option value="<%= updatedRestaurant.city %> ">Venice</option>
+        <option value="<%= updatedRestaurant.city %> ">Roma</option>
+        <option value="<%= updatedRestaurant.city %> ">Turin</option>
+        <option value="<%= updatedRestaurant.city %> ">Florence</option>
+        <option value="<%= updatedRestaurant.city %> ">Neapel</option>
+
+</select>
+<div>
+    <label for="description">Description:</label>
+    <textarea name="description" rows="10"><%= updatedRestaurant.description %> </textarea>
+</div>
+<div>
+    <label for="price">Price</label>
+    <input type="text" name="price" value="<%= updatedRestaurant.price %>">
+</div>
+    <a href="/profile/<%= updatedRestaurant._id %>/update"><button>Update!!</button></a>
+    </form>
+  </div>  
+
+
+
+
+</div>

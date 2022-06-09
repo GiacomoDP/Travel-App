@@ -1,5 +1,7 @@
 const router = require("express").Router()
 const restaurantModel = require('../models/restaurantModel')
+const uploader = require("../config/cloudinary.config")
+const isLogIn = require("../middleware/isLogIn")
 
 
 
@@ -146,22 +148,76 @@ router.get('/german/freiburg', async(req, res, next) => {
 
 
 // Add a new city
-router.get('/create', async(req, res, next) => {
-    res.render('/create-form')
+router.get('/create-form', async(req, res, next) => {
+    res.render('create-form')
 
 })
 
-router.post('/create-form', async(req, res, next) => {
+router.post('/create-form',isLogIn, uploader.single("restaurantsImage"), async(req, res, next) => {
     try {
-        // const newDrone = await DroneModel.create(req.body)
-        res.redirect('/')
-        console.log('Restaurant was created')
+        const {name, city, country, address, description, price} = req.body
+        const autor = req.session.currentUser._id
+       // console.log(req.session.currentUser, "Users detected")
+       const newRestaurant = await  restaurantModel.create({
+           picture: req.file.path,
+           name,
+           country,
+           city,
+           description,
+           price,
+           address,
+           autor
+})
+        res.redirect('/profile')
+        console.log('Restaurant was created', newRestaurant)
     } catch (error) {
         console.log('Error occured while creating restaurant', error)
     }
 })
 
+// Delete Restaurnts
 
+router.post("/profile/:id/delete", isLogIn, async(req, res, next) => {
+    try{
+        const {id} = req.params
+        await restaurantModel.findByIdAndDelete(id)
+        res.redirect("/profile")
+    } catch(error){
+ next(error)
+    }
+})
+ // Update Restaurants
+
+ router.get("/profile/:id/update", isLogIn, async(req, res, next) => {
+    try{
+        const {id} = req.params
+        const updatedRestaurant = await restaurantModel.findById(id)
+        res.render("restaurant-update", {updatedRestaurant})
+
+    }catch(error){
+next(error)
+    }
+})
+
+
+router.post('/profile/:id/update',isLogIn, uploader.single("restaurantsImage"), async(req, res, next) => {
+    try {
+        const {name, city, description, price} = req.body
+        const {id} = req.params
+        const changedRestaurant = await restaurantModel.findByIdAndUpdate(id, {
+            name, 
+            picture: req.file.path, 
+            city, 
+            description, 
+            price
+        })
+        console.log(changedRestaurant, "new restaurants!!")
+        //res.redirect(`/profile/${changedRestaurant._id}/update`)
+        res.redirect("/profile")
+    } catch (error) {
+        console.log('Error occured while updating the restaurant', error)
+    }
+})
 
 
 

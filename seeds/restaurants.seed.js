@@ -7,46 +7,53 @@ const restaurants = [{
         picture: 'nice',
         description: 'later',
         price: 'cheap',
+        autor: "629e4113c32349617d0d3a0f"
 
     },
     {
         city: 'Hambourg',
         country: 'Germany',
         name: 'Second favorite',
-        address: 'knowing boh',
+        address: 'Viaxx',
         picture: 'really nice',
         description: 'later',
         price: 'cheap',
+        autor: "629e4113c32349617d0d3a0f"
+
 
     },
     {
         city: 'Venice',
         country: 'Italy',
-        name: 'ourFavo',
-        address: 'knowing',
-        picture: 'nice',
+        name: 'Al Squero',
+        address:  'Boh',
+        picture: 'Yes',
         description: 'later',
         price: 'cheap',
+        autor: "629e4113c32349617d0d3a0f"
+
 
     },
     {
         city: 'Dresden',
         country: 'Germany',
-        name: 'ourFavo',
+        name: 'Nextone',
         address: 'knowing',
         picture: 'nice',
         description: 'later',
         price: 'cheap',
+        autor: "629e4113c32349617d0d3a0f"
 
     },
     {
         city: 'Roma',
         country: 'Italy',
-        name: 'ourFavo',
+        name: 'Nieffe',
         address: 'knowing',
         picture: 'nice',
         description: 'later',
         price: 'cheap',
+        autor: "629e4113c32349617d0d3a0f"
 
     },
 

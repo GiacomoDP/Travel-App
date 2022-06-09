@@ -2,14 +2,23 @@ const { model, Schema } = require('mongoose')
 
 const restaurantsSchema = new Schema({
 
-    city: { type: String, required: true },
-    country: String,
-    name: String,
     address: String,
+    country: {
+    type: String,
+    enum: ["Germany", "Italy"]
+},
+    name: String,
+    city: {
+       type: String,
+       enum: ["Dresden", "Florence", "Freiburg", "Hambourg", "Luebeck", "Munich", "Neapel", "Roma", "Turin", "Venice"] 
+    },
     picture: String,
     description: String,
     price: String,
-
+    autor: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    }
 }, {
     timestamps: true
 })

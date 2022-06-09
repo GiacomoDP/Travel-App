@@ -1,20 +1,44 @@
 <h2>Create a Restaurant</h2>
 
-<form action="/create-form" method="POST">
+<form action="/create-form" method="POST" enctype="multipart/form-data">
+    <label for="restaurantsImage">
+        <input type="file" name="restaurantsImage">
+    </label>
+
+    <label>
+        Name:
+        <input type="text" name="name" />
+      </label>
+    
+    
     <label>
     City:
-    <input type="text" name="city" />
-  </label>
+    </label>
+    <select name="city">
+        <option value="Hambourg">Hambourg</option>
+        <option value="Freiburg">Freiburg</option>
+        <option value="Dresden">Dresden</option>
+        <option value="Munich">Munich</option>
+        <option value="Luebeck">Luebeck</option>
+        <option value="Venice">Venice</option>
+        <option value="Roma">Roma</option>
+        <option value="Turin">Turin</option>
+        <option value="Florence">Florence</option>
+        <option value="Neapel">Neapel</option>
+        
+    </select>
+ 
 
-    <label>
-    Country:
-    <input type="text" name="country" />
-  </label>
+    <label for="country">
+   Country:
+     </label>
+    <select name="country">
+        <option value="Germany">Germany</option>
+        <option value="Italy">Italy</option>
+    </select>
+ 
 
-    <label>
-    Name:
-    <input type="text" name="name" />
-  </label>
+ 
 
   <label>
     Address:
@@ -22,13 +46,8 @@
   </label>
 
   <label>
-    Picture:
-    <input type="image" name="picture" />
-  </label>
-
-  <label>
     Description:
-    <input type="text" name="description" />
+    <textarea rows="10" name="description"></textarea>
   </label>
 
   <label>
