@@ -1,10 +1,32 @@
 <h2>Restaurants from Roma</h2>
-<div>
-    <% romaRestaurants.forEach(restaurant => { %>
-     <img src="<%= restaurant.picture %> " alt="restaurantPic">
-     <h3><%= restaurant.name  %> </h3>
-     <h5><%= restaurant.address %> </h5>
-     <p><%= restaurant.description %> </p>
-     <span><%= restaurant.price %> </span>
-    <% }) %>
+<div class="border border-dark rounded">
+
+    <div class="shadow-lg p-3 mb-5 bg-white border border-primary rounded">Name of restaurant:
+        <% romaRestaurants.forEach(restaurant => { %>
+            <img src="<%= restaurant.picture %> " alt="restaurantPic">
+            <h3>
+
+
+                <%= restaurant.name  %>
+            </h3>
+    </div>
+
+    <div class="shadow-lg p-3 mb-5 bg-white border border-success rounded">Address:
+        <h5>
+            <%= restaurant.address %>
+        </h5>
+    </div>
+
+    <div class="shadow-lg p-3 mb-5 bg-white border border-danger rounded">Description:
+        <p>
+            <%= restaurant.description %>
+        </p>
+    </div>
+
+    <div class="shadow-lg p-3 mb-5 bg-white border border-warning rounded">Price:
+        <span><%= restaurant.price %> </span>
+        <% }) %>
+    </div>
+
+
 </div>
