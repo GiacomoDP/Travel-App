@@ -135,7 +135,7 @@ router.get('/german/luebeck', async(req, res, next) => {
 
 router.get('/german/freiburg', async(req, res, next) => {
     try {
-        const freiburgRestaurants = await restaurantModel.find({ city: 'freiburg' })
+        const freiburgRestaurants = await restaurantModel.find({ city: 'Freiburg' })
         //console.log('this is HH_Restaurant', hambourgRestaurants[0])
         res.render("restaurantsByCity/freiburgRestaurants", {freiburgRestaurants} )
     } catch (error) {
