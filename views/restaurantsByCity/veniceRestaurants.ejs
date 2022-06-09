@@ -1,33 +1,38 @@
 <h2>Restaurants from Venice</h2>
 
-<div class="border border-dark rounded">
+<% veniceRestaurants.forEach(restaurant => { %>
+    <div class="restaurantContainer">
+        <div class="border border-dark rounded">
+            <div class="imageContainer">
+                <img src="<%= restaurant.picture %> " alt="restaurantPic" width="300px" height="300px">
+            </div>
 
-    <div class="shadow-lg p-3 mb-5 bg-white border border-primary rounded">Name of restaurant:
-        <% veniceRestaurants.forEach(restaurant => { %>
-            <img src="<%= restaurant.picture %> " alt="restaurantPic">
-            <h3>
+            <div class="shadow-lg p-3 mb-5 bg-white border border-primary rounded">
+                <h3>
+                    Name of restaurant:
+                    <%= restaurant.name  %>
 
+                </h3>
+            </div>
 
-                <%= restaurant.name  %>
-            </h3>
+            <div class="shadow-lg p-3 mb-5 bg-white border border-success rounded">
+                <h5>
+                    Address:
+                    <%= restaurant.address %>
+                </h5>
+            </div>
+
+            <div class="shadow-lg p-3 mb-5 bg-white border border-danger rounded">
+                <p>
+                    Description:
+                    <%= restaurant.description %>
+                </p>
+            </div>
+
+            <div class="shadow-lg p-3 mb-5 bg-white border border-warning rounded">
+                <span>Price: <%= restaurant.price %> </span>
+
+            </div>
+        </div>
     </div>
-
-    <div class="shadow-lg p-3 mb-5 bg-white border border-success rounded">Address:
-        <h5>
-            <%= restaurant.address %>
-        </h5>
-    </div>
-
-    <div class="shadow-lg p-3 mb-5 bg-white border border-danger rounded">Description:
-        <p>
-            <%= restaurant.description %>
-        </p>
-    </div>
-
-    <div class="shadow-lg p-3 mb-5 bg-white border border-warning rounded">Price:
-        <span><%= restaurant.price %> </span>
-        <% }) %>
-    </div>
-
-
-</div>
+    <% }) %>

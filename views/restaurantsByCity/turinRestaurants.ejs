@@ -1,41 +1,38 @@
 <h2>Restaurants from Turin</h2>
-<!-- <div>
-    <% turinRestaurants.forEach(restaurant => { %>
-     <img src="<%= restaurant.picture %> " alt="restaurantPic">
-     <h3><%= restaurant.name  %> </h3>
-     <h5><%= restaurant.address %> </h5>
-     <p><%= restaurant.description %> </p>
-     <span><%= restaurant.price %> </span>
+
+<% turinRestaurants.forEach(restaurant => { %>
+    <div class="restaurantContainer">
+        <div class="border border-dark rounded">
+            <div class="imageContainer">
+                <img src="<%= restaurant.picture %> " alt="restaurantPic" width="300px" height="300px">
+            </div>
+
+            <div class="shadow-lg p-3 mb-5 bg-white border border-primary rounded">
+                <h3>
+                    Name of restaurant:
+                    <%= restaurant.name  %>
+
+                </h3>
+            </div>
+
+            <div class="shadow-lg p-3 mb-5 bg-white border border-success rounded">
+                <h5>
+                    Address:
+                    <%= restaurant.address %>
+                </h5>
+            </div>
+
+            <div class="shadow-lg p-3 mb-5 bg-white border border-danger rounded">
+                <p>
+                    Description:
+                    <%= restaurant.description %>
+                </p>
+            </div>
+
+            <div class="shadow-lg p-3 mb-5 bg-white border border-warning rounded">
+                <span>Price: <%= restaurant.price %> </span>
+
+            </div>
+        </div>
+    </div>
     <% }) %>
-</div> -->
-<div class="border border-dark rounded">
-
-    <div class="shadow-lg p-3 mb-5 bg-white border border-primary rounded">Name of restaurant:
-        <% turinRestaurants.forEach(restaurant => { %>
-            <img src="<%= restaurant.picture %> " alt="restaurantPic">
-            <h3>
-
-
-                <%= restaurant.name  %>
-            </h3>
-    </div>
-
-    <div class="shadow-lg p-3 mb-5 bg-white border border-success rounded">Address:
-        <h5>
-            <%= restaurant.address %>
-        </h5>
-    </div>
-
-    <div class="shadow-lg p-3 mb-5 bg-white border border-danger rounded">Description:
-        <p>
-            <%= restaurant.description %>
-        </p>
-    </div>
-
-    <div class="shadow-lg p-3 mb-5 bg-white border border-warning rounded">Price:
-        <span><%= restaurant.price %> </span>
-        <% }) %>
-    </div>
-
-
-</div>

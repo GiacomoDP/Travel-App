@@ -10,3 +10,27 @@ a {
 h1 {
     color: 15px;
 }
+
+.restaurantContainer {
+    width: 1000px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 400px;
+    margin-bottom: 100px;
+}
+
+.imageContainer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
