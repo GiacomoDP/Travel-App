@@ -1,20 +1,24 @@
-<h2>Create a Restaurant</h2>
+<div class="bgImage">
 
-<form action="/create-form" method="POST" enctype="multipart/form-data">
-    <label for="restaurantsImage">
+    <h2>Create a Restaurant</h2>
+
+    <div class="createLeftTop">
+        <form action="/create-form" method="POST" enctype="multipart/form-data">
+            <label for="restaurantsImage">
         <input type="file" name="restaurantsImage">
     </label>
 
-    <label>
+            <label>
         Name:
         <input type="text" name="name" />
       </label>
-    
-    
-    <label>
-    City:
+    </div>
+
+    <div class="createCenter">
+        <label>
+    City: 
     </label>
-    <select name="city">
+        <select name="city">
         <option value="Hambourg">Hambourg</option>
         <option value="Freiburg">Freiburg</option>
         <option value="Dresden">Dresden</option>
@@ -27,33 +31,45 @@
         <option value="Neapel">Neapel</option>
         
     </select>
- 
 
-    <label for="country">
-   Country:
+
+        <label for="country">
+   Country: 
      </label>
-    <select name="country">
+        <select name="country">
         <option value="Germany">Germany</option>
         <option value="Italy">Italy</option>
     </select>
- 
+    </div>
 
- 
 
-  <label>
+    <div class="createRightBottom">
+        <label>
     Address:
     <input type="text" name="address" />
   </label>
 
-  <label>
+        <label>
     Description:
     <textarea rows="10" name="description"></textarea>
   </label>
+    </div>
 
-  <label>
+    <div>
+        <label>
     Price:
-    <input type="text" name="price" />
+    <!-- <input type="text" name="price" /> -->
   </label>
+        <select name="price" id="">
+    <option value="€">€</option>
+    <option value="€€">€€</option>
+    <option value="€€€">€€€</option>
+    <option value="€€€€">€€€€</option>
+    <option value="€€€€€">€€€€€</option>
+  </select>
 
-    <button type="submit">Create</button>
-</form>
+        <button type="submit">Create</button>
+        </form>
+    </div>
+
+</div>

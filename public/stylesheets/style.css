@@ -34,3 +34,43 @@ h2 {
     display: flex;
     justify-content: center;
 }
+
+.mainpicture {
+    background-image: url("public/images/bgr1.jpg");
+    background-size: cover;
+    background-position-x: 60%;
+    background-position-y: 50%;
+    background-color: chartreuse;
+    /*Die Farbe erscheint nur bei langen Ladezeiten des Browsers; ansonsten wäre für den User nur ein weißer BIldschirm zu sehen*/
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+}
+
+.spaceBox {
+    display: flex;
+    justify-content: space-around;
+}
+
+.bgImage {
+    /* background-image: url("public/images/background.jpg"); */
+    background-color: burlywood;
+}
+
+.createLeftTop {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.createCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.createRightBottom {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}

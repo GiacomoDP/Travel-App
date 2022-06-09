@@ -1,44 +1,74 @@
-<h1>Welcome, dear
-    <%= name %>
-</h1>
-<h2>This is your profile Site.</h2>
-<br>
-<br>
-<h4>In which country you're interested in?</h4>
-
-<div>
-    <!-- <a href="/italian"><button type="button">ITALY</button></a>
-    <a href="/german"><button>GERMANY</button></a> -->
-
-    <a href="/italian"><button type="button" class="btn btn-outline-success btn-lg">ITALY</button></a>
-    <a href="/german"><button type="button" class="btn btn-outline-warning btn-lg">GERMANY</button></a>
-</div>
-<br><br><br>
-<h3>This is your restaurants list:</h3>
-<div>
-    <p>If you don't have any you can create here:</p>
-    <!-- <a href="/create-form"><button>Create your restaurant</button></a> -->
-    <a href="/create-form"><button type="button" class="btn btn-outline-info btn-lg">Create your restaurant</button></a>
-</div>
-<% userRestaurants.forEach(element => { %>
+<div class="mainpicture">
     <div>
-        <h4>
-            <%= element.name %>
-        </h4>
-        <img src="<%= element.picture %> " alt="Picture Restaurant" width="300px" height="300px">
-        <h5>
-            <%= element.city %>
-        </h5>
-        <p>
-            <%= element.description %>
-        </p>
-        <span><%= element.price %> </span>
+        <div class="text-center">
+            <h1>Welcome, dear
+                <%= name %>
+            </h1>
+        </div>
 
-        <form action="/profile/<%= element._id %>/delete" method="POST">
-            <button>Delete</button>
-        </form>
-        <a href="/profile/<%= element._id %>/update">
-            <button>Update</button>
-        </a>
+        <br>
+
+        <!-- <img src="public/images/bgr1.jpg"> -->
+        <div class="text-center">
+            <h1>This is your profile Site.</h1>
+        </div>
     </div>
-    <% }) %>
+    <br>
+    <br>
+</div>
+
+<div class="bgImage">
+    <div>
+        <br><br><br><br>
+        <div class="text-center">
+            <h3>In which country you're interested in?</h3>
+        </div>
+        <div class="spaceBox">
+            <a href="/italian"><button type="button" class="btn btn-outline-success btn-lg">ITALY</button></a>
+            <a href="/german"><button type="button" class="btn btn-outline-warning btn-lg">GERMANY</button></a>
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <div class="text-center">
+        <h3>This is your restaurants list:</h3>
+        <div>
+            <p>If you don't have any you can create here:</p>
+            <!-- <a href="/create-form"><button>Create your restaurant</button></a> -->
+            <a href="/create-form"><button type="button" class="btn btn-outline-info btn-lg">Create your restaurant</button></a>
+        </div>
+        <% userRestaurants.forEach(element => { %>
+            <div>
+                <h4>
+                    <%= element.name %>
+                </h4>
+                <img src="<%= element.picture %> " alt="Picture Restaurant" width="300px" height="300px">
+                <h5>
+                    <%= element.city %>
+                </h5>
+                <p>
+                    <%= element.description %>
+                </p>
+                <span><%= element.price %> </span>
+
+                <form action="/profile/<%= element._id %>/delete" method="POST">
+                    <button>Delete</button>
+                </form>
+                <a href="/profile/<%= element._id %>/update">
+                    <button>Update</button>
+                </a>
+            </div>
+            <% }) %>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="text-center">
+        <form id="logout-form" action="/logout" method="POST">
+            <button class="btn btn-outline-danger btn-lg">Logout</button>
+        </form>
+    </div>
+</div>
