@@ -278,7 +278,7 @@ const restaurants = [
     {
         city: 'Hambourg',
         country: 'Germany',
-        name: 'Boullerei',
+        name: 'Bullerei',
         address: 'Lagerstraße 34b, 20357 Hamburg',
         picture: '../../images/Hambourg/Hambourg1.jpg',
         description: 'Steaks with sauces, chips and salads as well as beer and cocktails in popular restaurant in chic industrial style',
@@ -388,7 +388,7 @@ const restaurants = [
     {
         city: 'Munich',
         country: 'Germany',
-        name: 'Hans in Gluck',
+        name: 'Hans im Glück',
         address: 'Isartorpl. 8, 80331 München',
         picture: '../../images/Munich/Munich1.jpg',
         description: 'Enjoy incomparable culinary moments of happiness with your loved ones in a relaxed atmosphere in Munichs Birch Forest.',
@@ -445,7 +445,7 @@ const restaurants = [
         country: 'Germany',
         name: 'L`Osteria',
         address: 'An d. Untertrave 111, 23552 Lübeck',
-        picture: '../../images/Luebeck/Luebeck1.jpg',
+        picture: '../../images/Luebeck/Luebeck1.png',
         description: 'Through the Holsten Gate to the south. L`Osteria brings Mediterranean flair to the north.',
         price: '$$',
         autor: "629e4113c32349617d0d3a0f"
@@ -454,7 +454,7 @@ const restaurants = [
     {
         city: 'Luebeck',
         country: 'Germany',
-        name: 'Das Kostlich',
+        name: 'Das Köstlich',
         address: 'Kaiserallee 2, 23570 Lübeck',
         picture: '../../images/Luebeck/Luebeck2.jpg',
         description: 'Typical dishes in a casual restaurant with original décor and outdoor seating.',
@@ -476,7 +476,7 @@ const restaurants = [
     {
         city: 'Luebeck',
         country: 'Germany',
-        name: 'Lubecker Hanse',
+        name: 'Lübecker Hanse',
         address: 'Kolk 7, 23552 Lübeck',
         picture: '../../images/Luebeck/Luebeck4.jpg',
         description: 'Inviting restaurant for schnitzel, grilled fish and Holstein steak in a dining room with wooden beams.',
@@ -487,7 +487,7 @@ const restaurants = [
     {
         city: 'Luebeck',
         country: 'Germany',
-        name: 'Fangfrish',
+        name: 'Fangfrisch',
         address: 'An d. Untertrave 51, 23552 Lübeck',
         picture: '../../images/Luebeck/Luebeck5.jpg',
         description: 'Modern restaurant with a straightforward philosophy and fresh, regional fish dishes.',
