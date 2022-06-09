@@ -1,30 +1,43 @@
-<h2>This is our profile Site. Welcome , <%= name %> 
-   
-</h2>
+<h1>Welcome, dear
+    <%= name %>
+</h1>
+<h2>This is your profile Site.</h2>
+
+<h4>In which country you're interested in?</h4>
+
 <div>
-<a href="/italian"><button type="button">ITALY</button></a>
-<a href="/german"><button>GERMANY</button></a>
+    <!-- <a href="/italian"><button type="button">ITALY</button></a>
+    <a href="/german"><button>GERMANY</button></a> -->
+
+    <a href="/italian"><button type="button" class="btn btn-outline-success btn-lg">ITALY</button></a>
+    <a href="/german"><button type="button" class="btn btn-outline-warning btn-lg">GERMANY</button></a>
 </div>
 
-<h3>This is your restaurants list</h3>
+<h3>This is your restaurants list:</h3>
 <div>
-<p>If you don't have any you can create here</p><a href="/create-form"><button>Create your restaurant</button></a>
+    <p>If you don't have any you can create here:</p>
+    <!-- <a href="/create-form"><button>Create your restaurant</button></a> -->
+    <a href="/create-form"><button type="button" class="btn btn-outline-info btn-lg">Create your restaurant</button></a>
 </div>
 <% userRestaurants.forEach(element => { %>
- <div>
-     <h4><%= element.name %> </h4>
- <img src="<%= element.picture %> " alt="Picture Restaurant" width="300px" height="300px">
- <h5><%= element.city %> </h5>
- <p><%= element.description %> </p>
- <span><%= element.price %> </span>
+    <div>
+        <h4>
+            <%= element.name %>
+        </h4>
+        <img src="<%= element.picture %> " alt="Picture Restaurant" width="300px" height="300px">
+        <h5>
+            <%= element.city %>
+        </h5>
+        <p>
+            <%= element.description %>
+        </p>
+        <span><%= element.price %> </span>
 
- <form action="/profile/<%= element._id %>/delete" method="POST">
-    <button>Delete</button>  
-    </form>
-    <a href="/profile/<%= element._id %>/update">
-        <button>Update</button>  
-    </a>
-</div>
-<% }) %>
-
-
+        <form action="/profile/<%= element._id %>/delete" method="POST">
+            <button>Delete</button>
+        </form>
+        <a href="/profile/<%= element._id %>/update">
+            <button>Update</button>
+        </a>
+    </div>
+    <% }) %>
