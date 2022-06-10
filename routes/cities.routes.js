@@ -177,7 +177,7 @@ router.post('/create-form', uploader.single("restaurantsImage"), async(req, res,
 
 // Delete Restaurnts
 
-router.post("/profile/:id/delete", isLogIn, async(req, res, next) => {
+router.post("/profile/:id/delete", async(req, res, next) => {
     try{
         const {id} = req.params
         await restaurantModel.findByIdAndDelete(id)
