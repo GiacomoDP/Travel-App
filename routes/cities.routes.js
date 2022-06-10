@@ -188,7 +188,7 @@ router.post("/profile/:id/delete", isLogIn, async(req, res, next) => {
 })
  // Update Restaurants
 
- router.get("/profile/:id/update", isLogIn, async(req, res, next) => {
+ router.get("/profile/:id/update", async(req, res, next) => {
     try{
         const {id} = req.params
         const updatedRestaurant = await restaurantModel.findById(id)
@@ -200,7 +200,7 @@ next(error)
 })
 
 
-router.post('/profile/:id/update',isLogIn, uploader.single("restaurantsImage"), async(req, res, next) => {
+router.post('/profile/:id/update', uploader.single("restaurantsImage"), async(req, res, next) => {
     try {
         const {name, city, description, price} = req.body
         const {id} = req.params
