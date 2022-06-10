@@ -153,7 +153,7 @@ router.get('/create-form', async(req, res, next) => {
 
 })
 
-router.post('/create-form',isLogIn, uploader.single("restaurantsImage"), async(req, res, next) => {
+router.post('/create-form', uploader.single("restaurantsImage"), async(req, res, next) => {
     try {
         const {name, city, country, address, description, price} = req.body
         const autor = req.session.currentUser._id
