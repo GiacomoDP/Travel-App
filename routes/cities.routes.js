@@ -159,7 +159,7 @@ router.post('/create-form',isLogIn, uploader.single("restaurantsImage"), async(r
         const autor = req.session.currentUser._id
        // console.log(req.session.currentUser, "Users detected")
        const newRestaurant = await  restaurantModel.create({
-           picture: req.file.path,
+         //  picture: req.file.path,
            name,
            country,
            city,
